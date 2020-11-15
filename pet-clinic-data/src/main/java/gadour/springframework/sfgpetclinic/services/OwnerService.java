@@ -5,10 +5,8 @@ import gadour.springframework.sfgpetclinic.model.Owner;
 
 import java.util.Set;
 
-public interface OwnerService {
+public interface OwnerService extends CrudService<Owner , Long> {
 
-   Owner findById(Long id);
-   Owner save(Owner owner);
-   Set<Owner> findAll();
+   Owner findByOwnerName(String lastName);
 
 }
