@@ -1,11 +1,12 @@
 package gadour.springframework.sfgpetclinic.model.services.map;
 
 import gadour.springframework.sfgpetclinic.model.model.Pet;
-import gadour.springframework.sfgpetclinic.model.services.CrudService;
+import gadour.springframework.sfgpetclinic.model.services.PetService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
-
-public class PetServiceMap extends AbstractMapService<Pet, Long> implements CrudService<Pet, Long> {
+@Service
+public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService {
     @Override
     public Set<Pet> findAll() {
         return super.findAll();

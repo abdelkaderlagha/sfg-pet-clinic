@@ -3,9 +3,11 @@ package gadour.springframework.sfgpetclinic.model.services.map;
 import gadour.springframework.sfgpetclinic.model.model.Vet;
 import gadour.springframework.sfgpetclinic.model.services.CrudService;
 import gadour.springframework.sfgpetclinic.model.services.VetService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
 
     @Override
