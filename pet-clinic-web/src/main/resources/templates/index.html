@@ -5,25 +5,8 @@
     <title>Pet Clinic Index</title>
 </head>
 <body>
-<!--/*@thymesVar id="vet" type="gadour.springframework.sfgpetclinic.model.model.Vet"*/-->
     <h1 th:text="'Index Page'">Index Page</h1>
 
-    <table>
-        <thead>
-        <tr>
-            <th>Id</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-        </tr>
-        </thead>
-        <tbody>
 
-        <tr th:each="vet : ${vets}">
-            <td th:text="${vet?.id}">1</td>
-            <td th:text="${vet?.firstName}">sami</td>
-            <td th:text="${vet?.lastname}">lal</td>
-        </tr>
-        </tbody>
-    </table>
 </body>
 </html>
