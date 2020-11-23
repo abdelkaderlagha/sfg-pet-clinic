@@ -1,7 +1,7 @@
-package gadour.springframework.sfgpetclinic.services.map;
+package gadour.springframework.sfgpetclinic.model.services.map;
 
-import gadour.springframework.sfgpetclinic.model.Pet;
-import gadour.springframework.sfgpetclinic.services.CrudService;
+import gadour.springframework.sfgpetclinic.model.model.Pet;
+import gadour.springframework.sfgpetclinic.model.services.CrudService;
 
 import java.util.Set;
 

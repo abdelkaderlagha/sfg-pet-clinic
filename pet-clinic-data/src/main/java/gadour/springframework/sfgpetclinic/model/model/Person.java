@@ -1,4 +1,4 @@
-package gadour.springframework.sfgpetclinic.model;
+package gadour.springframework.sfgpetclinic.model.model;
 
 public class Person extends  BaseEntity{
 

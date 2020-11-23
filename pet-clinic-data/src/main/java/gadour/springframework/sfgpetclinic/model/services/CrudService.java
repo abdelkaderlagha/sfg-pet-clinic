@@ -1,4 +1,4 @@
-package gadour.springframework.sfgpetclinic.services;
+package gadour.springframework.sfgpetclinic.model.services;
 
 import java.util.Set;
 

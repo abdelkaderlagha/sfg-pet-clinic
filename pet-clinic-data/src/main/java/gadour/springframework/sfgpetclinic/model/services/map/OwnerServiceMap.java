@@ -1,11 +1,12 @@
-package gadour.springframework.sfgpetclinic.services.map;
+package gadour.springframework.sfgpetclinic.model.services.map;
 
-import gadour.springframework.sfgpetclinic.model.Owner;
-import gadour.springframework.sfgpetclinic.services.CrudService;
+import gadour.springframework.sfgpetclinic.model.model.Owner;
+import gadour.springframework.sfgpetclinic.model.services.CrudService;
+import gadour.springframework.sfgpetclinic.model.services.OwnerService;
 
 import java.util.Set;
 
-public class OwnerServiceMap extends AbstractMapService<Owner , Long> implements CrudService<Owner, Long> {
+public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
     @Override
     public Set<Owner> findAll() {
@@ -30,5 +31,10 @@ public class OwnerServiceMap extends AbstractMapService<Owner , Long> implements
     @Override
     public Owner findById(Long id) {
         return super.findById(id);
+    }
+
+    @Override
+    public Owner findByOwnerName(String lastName) {
+        return null;
     }
 }

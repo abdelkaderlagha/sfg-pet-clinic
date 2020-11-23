@@ -1,4 +1,4 @@
-package gadour.springframework.sfgpetclinic.services.map;
+package gadour.springframework.sfgpetclinic.model.services.map;
 
 import java.util.HashMap;
 import java.util.HashSet;
