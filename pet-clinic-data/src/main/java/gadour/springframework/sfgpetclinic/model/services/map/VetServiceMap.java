@@ -1,7 +1,9 @@
 package gadour.springframework.sfgpetclinic.model.services.map;
 
+import gadour.springframework.sfgpetclinic.model.model.Speciality;
 import gadour.springframework.sfgpetclinic.model.model.Vet;
 import gadour.springframework.sfgpetclinic.model.services.CrudService;
+import gadour.springframework.sfgpetclinic.model.services.SpecialityService;
 import gadour.springframework.sfgpetclinic.model.services.VetService;
 import org.springframework.stereotype.Service;
 
@@ -9,6 +11,12 @@ import java.util.Set;
 
 @Service
 public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
+
+    private SpecialityService specialityService;
+
+    public VetServiceMap(SpecialityService specialityService) {
+        this.specialityService = specialityService;
+    }
 
     @Override
     public Set<Vet> findAll() {
@@ -27,6 +35,18 @@ public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetS
 
     @Override
     public Vet save(Vet object) {
+
+
+        if(object.getSpeciality().size()==0){
+            object.getSpeciality().forEach(speciality -> {
+                if (speciality.getId() == null) {
+                    specialityService.save(speciality);
+                    speciality.setId(specialityService.save(speciality).getId());
+                }
+            });
+        }
+
+
         return super.save(object);
     }
 
