@@ -1,5 +1,6 @@
 package gadour.springframework.sfgpetclinic.model.model;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class Owner extends  Person{
@@ -8,7 +9,7 @@ public class Owner extends  Person{
     private String telephone;
     private String city;
 
-    private Set<Pet> pets;
+    private Set<Pet> pets = new HashSet<>();
 
     public String getAdress() {
         return Adress;
