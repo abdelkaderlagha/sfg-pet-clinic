@@ -1,22 +1,31 @@
 package gadour.springframework.sfgpetclinic.model.model;
 
+import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
+@Entity
+@Table(name="owners")
 public class Owner extends  Person{
 
-    private String Adress;
+    @Column(name="address")
+    private String address;
+
+    @Column(name="telephone")
     private String telephone;
+
+    @Column(name="city")
     private String city;
 
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
     private Set<Pet> pets = new HashSet<>();
 
-    public String getAdress() {
-        return Adress;
+    public String getAddress() {
+        return address;
     }
 
-    public void setAdress(String adress) {
-        Adress = adress;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getTelephone() {
