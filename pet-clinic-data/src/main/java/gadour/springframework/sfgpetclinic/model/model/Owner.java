@@ -8,8 +8,8 @@ import java.util.Set;
 @Table(name="owners")
 public class Owner extends  Person{
 
-    @Column(name="address")
-    private String address;
+    @Column(name="address_home")
+    private String address_home;
 
     @Column(name="telephone")
     private String telephone;
@@ -20,12 +20,12 @@ public class Owner extends  Person{
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
     private Set<Pet> pets = new HashSet<>();
 
-    public String getAddress() {
-        return address;
+    public String getAddress_home() {
+        return address_home;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setAddress_home(String address_home) {
+        this.address_home = address_home;
     }
 
     public String getTelephone() {
