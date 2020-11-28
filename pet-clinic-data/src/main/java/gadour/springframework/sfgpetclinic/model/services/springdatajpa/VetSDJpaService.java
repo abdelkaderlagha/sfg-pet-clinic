@@ -3,10 +3,12 @@ package gadour.springframework.sfgpetclinic.model.services.springdatajpa;
 import gadour.springframework.sfgpetclinic.model.model.Vet;
 import gadour.springframework.sfgpetclinic.model.repositories.VetRepository;
 import gadour.springframework.sfgpetclinic.model.services.VetService;
+import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.Set;
 
+@Service
 public class VetSDJpaService implements VetService {
 
     private final VetRepository vetRepository;
