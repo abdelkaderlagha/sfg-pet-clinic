@@ -3,12 +3,14 @@ package gadour.springframework.sfgpetclinic.model.services.springdatajpa;
 import gadour.springframework.sfgpetclinic.model.model.PetType;
 import gadour.springframework.sfgpetclinic.model.repositories.PetTypeRepository;
 import gadour.springframework.sfgpetclinic.model.services.PetTypeService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.Set;
 
 @Service
+@Profile("springdatajpa")
 public class PetTypeSDJpaService implements PetTypeService {
 
     private final PetTypeRepository petTypeRepository;
