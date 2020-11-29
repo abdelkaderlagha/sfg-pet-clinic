@@ -2,11 +2,13 @@ package gadour.springframework.sfgpetclinic.model.services.map;
 
 import gadour.springframework.sfgpetclinic.model.model.Visit;
 import gadour.springframework.sfgpetclinic.model.services.VisitService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile({"default","map"})
 public class VisitServiceMap extends AbstractMapService<Visit , Long> implements VisitService {
 
     @Override
@@ -27,9 +29,7 @@ public class VisitServiceMap extends AbstractMapService<Visit , Long> implements
     @Override
     public Visit save(Visit object) {
 
-        if(object.getPet()==null || object.getPet().getOwner()==null || object.getPet().getId()==null){
-            throw new RuntimeException("Invalid visit");
-        }
+        
             return super.save(object);
 
     }

@@ -1,5 +1,7 @@
 package gadour.springframework.sfgpetclinic.model.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.HashSet;
@@ -8,22 +10,22 @@ import java.util.Set;
 @Entity
 @Table(name="pets")
 public class Pet extends  BaseEntity{
-    @Column(name="name")
+    @Column(name = "name")
     private String name;
 
-
     @ManyToOne
-    @JoinColumn(name="type_id")
+    @JoinColumn(name = "type_id")
     private PetType petType;
 
     @ManyToOne
-    @JoinColumn(name="owner_id")
+    @JoinColumn(name = "owner_id")
     private Owner owner;
 
-    @Column(name="date")
-    private LocalDate date;
+    @Column(name = "birth_date")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate birthDate;
 
-    @OneToMany(cascade = CascadeType.ALL , mappedBy = "pet")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "pet")
     private Set<Visit> visits = new HashSet<>();
 
     public String getName() {
@@ -50,12 +52,12 @@ public class Pet extends  BaseEntity{
         this.owner = owner;
     }
 
-    public LocalDate getDate() {
-        return date;
+    public LocalDate getBirthDate() {
+        return birthDate;
     }
 
-    public void setDate(LocalDate date) {
-        this.date = date;
+    public void setBirthDate(LocalDate birthDate) {
+        this.birthDate = birthDate;
     }
 
     public Set<Visit> getVisits() {
