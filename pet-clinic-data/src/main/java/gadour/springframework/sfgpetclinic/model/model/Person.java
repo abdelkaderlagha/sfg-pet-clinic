@@ -1,9 +1,13 @@
 package gadour.springframework.sfgpetclinic.model.model;
 
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
-
+@Getter
+@Setter
 @MappedSuperclass
 public class Person extends  BaseEntity{
 
@@ -13,19 +17,5 @@ public class Person extends  BaseEntity{
     @Column(name="last_name")
     private String lastname;
 
-    public String getFirstName() {
-        return firstName;
-    }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastname() {
-        return lastname;
-    }
-
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
-    }
 }
