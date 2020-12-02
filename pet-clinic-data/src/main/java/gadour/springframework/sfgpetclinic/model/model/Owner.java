@@ -9,11 +9,17 @@ import java.util.Set;
 @Entity
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Builder
 @Table(name="owners")
 public class Owner extends  Person{
+
+    @Builder
+    public Owner(Long id, String firstName, String lastname, String address_home, String telephone, String city) {
+        super(id, firstName, lastname);
+    }
+
 
     @Column(name="address_home")
     private String address_home;
