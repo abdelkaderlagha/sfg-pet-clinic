@@ -15,7 +15,7 @@ jobs:
         name: Install Dependencies
         command: mvn dependency:go-offline --settings 'pom.xml'
     - run:
-        name: Run Tests
+        name: mvn install
         command: mvn verify --settings 'pom.xml'
     - save_cache:
         paths:
