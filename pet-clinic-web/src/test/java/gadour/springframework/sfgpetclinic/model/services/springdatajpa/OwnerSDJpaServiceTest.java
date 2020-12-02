@@ -19,6 +19,7 @@ import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
@@ -88,12 +89,6 @@ class OwnerSDJpaServiceTest {
 
     @Test
     void findByOwnerName() {
-        Owner returnOwner = Owner.builder().id(2L).lastname("smith").build();
 
-        when(ownerRepository.findBylastname(any())).thenReturn(returnOwner);
-
-        Owner smith = service.findByOwnerName("Smith");
-
-        assertEquals("smith", smith.getLastname());
     }
 }
