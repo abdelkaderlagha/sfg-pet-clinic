@@ -12,10 +12,23 @@ import java.util.Set;
 @Entity
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
 @Table(name="vets")
 public class Vet extends  Person {
+
+    public Vet(Set<Speciality> speciality) {
+        this.speciality = speciality;
+    }
+
+    public Vet(Long id, String firstName, String lastname, Set<Speciality> speciality) {
+        super(id, firstName, lastname);
+        this.speciality = speciality;
+    }
+
+    public Vet(String firstName, String lastname, Set<Speciality> speciality) {
+        super(firstName, lastname);
+        this.speciality = speciality;
+    }
 
     @ManyToMany(fetch = FetchType.EAGER )
     @JoinTable(name = "vet_specialities" , joinColumns = @JoinColumn(name="vet_is"),inverseJoinColumns = @JoinColumn(name="speciality_id"))
